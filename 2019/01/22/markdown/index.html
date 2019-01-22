@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Markdown使用教程 | yuan&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="yuan,yuan's Blog">
+  
+  <meta name="description" content="前言本人第一次接触到.md格式的文件是在github中看到的，之前也不懂得是什么，随着对GitHub的使用逐渐增多，了解到了Markdown，这也算是程序员中最流行的文本格式了，所以自己也学习了一下，个人感觉还是很不错的，以很简单的语法可以构建出简介、美观的文本格式。现整理了一下Markdown的基本语法供大家学习和参考，本文用最终效果和代码语法为大家展示markdown文本如何编写，希望对大家有">
+<meta name="keywords" content="开源项目,教程,markdown">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown使用教程">
+<meta property="og:url" content="https://yuanspace.top/2019/01/22/markdown/index.html">
+<meta property="og:site_name" content="yuan&#39;s blog">
+<meta property="og:description" content="前言本人第一次接触到.md格式的文件是在github中看到的，之前也不懂得是什么，随着对GitHub的使用逐渐增多，了解到了Markdown，这也算是程序员中最流行的文本格式了，所以自己也学习了一下，个人感觉还是很不错的，以很简单的语法可以构建出简介、美观的文本格式。现整理了一下Markdown的基本语法供大家学习和参考，本文用最终效果和代码语法为大家展示markdown文本如何编写，希望对大家有">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://i.postimg.cc/6pPYYqw8/image.jpg">
+<meta property="og:updated_time" content="2019-01-22T10:29:30.681Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Markdown使用教程">
+<meta name="twitter:description" content="前言本人第一次接触到.md格式的文件是在github中看到的，之前也不懂得是什么，随着对GitHub的使用逐渐增多，了解到了Markdown，这也算是程序员中最流行的文本格式了，所以自己也学习了一下，个人感觉还是很不错的，以很简单的语法可以构建出简介、美观的文本格式。现整理了一下Markdown的基本语法供大家学习和参考，本文用最终效果和代码语法为大家展示markdown文本如何编写，希望对大家有">
+<meta name="twitter:image" content="https://i.postimg.cc/6pPYYqw8/image.jpg">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">yuan&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        yuan&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        你想飞，就努力长出翅膀
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="yuan" target="_blank" href="//Y-mouse.github.io">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/Y-mouse">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="weibo" target="_blank" href="//weibo.com/xyuansky">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-markdown" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      Markdown使用教程
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/Markdown/">Markdown</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-01-22
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h3><p>本人第一次接触到.md格式的文件是在github中看到的，之前也不懂得是什么，随着对GitHub的使用逐渐增多，了解到了Markdown，这也算是程序员中最流行的文本格式了，所以自己也学习了一下，个人感觉还是很不错的，以很简单的语法可以构建出简介、美观的文本格式。现整理了一下Markdown的基本语法供大家学习和参考，本文用最终效果和代码语法为大家展示markdown文本如何编写，希望对大家有所帮助。</p>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>&ensp;&ensp;<a href="https://baike.baidu.com/item/markdown" target="_blank" rel="noopener">Markdown</a>是一种轻量级<a href="https://baike.baidu.com/item/%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80/5964436?fr=aladdin" target="_blank" rel="noopener">标记语言</a>，它用简洁的语法代替文本排版，让你可以用少量时间而去达到花费大量时间用word文档进行排版一样的效果，如你所看到本篇博客就是用markdown语法编写的。在这我就不对markdown进行详细介绍了，更多详细介绍请点击 → <a href="https://baike.baidu.com/item/markdown" target="_blank" rel="noopener">Markdown百度百科</a>。</p>
+<p>&nbsp;&ensp;&ensp;接下来直接进入正题！！</p>
+<h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a><strong>标题</strong></h3><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">‘#’ 后面要加空格</span><br></pre></td></tr></table></figure>
+<h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## 二级标题</span><br></pre></td></tr></table></figure>
+<h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">### 三级标题</span><br></pre></td></tr></table></figure>
+<h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#### 四级标题</span><br></pre></td></tr></table></figure>
+<h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">##### 五级标题</span><br></pre></td></tr></table></figure>
+<h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure>
+<p>####### 没有七级标题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">####### 没有七级标题</span><br></pre></td></tr></table></figure></p>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a><strong>列表</strong></h3><ul>
+<li>1</li>
+</ul>
+<ul>
+<li>2</li>
+</ul>
+<ul>
+<li>3</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- 1</span><br><span class="line">+ 2</span><br><span class="line">* 3</span><br></pre></td></tr></table></figure>
+<ol>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 1</span><br><span class="line">2. 2</span><br><span class="line">3. 3</span><br></pre></td></tr></table></figure>
+<h3 id="选项和勾选"><a href="#选项和勾选" class="headerlink" title="选项和勾选"></a><strong>选项和勾选</strong></h3><ul>
+<li style="list-style: none"><input type="checkbox" checked> A</li>
+<li style="list-style: none"><input type="checkbox"> B</li>
+<li style="list-style: none"><input type="checkbox"> C<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- [x] A</span><br><span class="line">- [ ] B</span><br><span class="line">- [ ] C</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a><strong>引用</strong></h3><blockquote>
+<p>例如这样</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;例如这样</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>鲁迅先生曾经说过：<br>我们目下的当务之急是：一要生存，而要温饱，三要发展。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;鲁迅先生曾经说过：</span><br><span class="line">我们目下的当务之急是：一要生存，而要温饱，三要发展。</span><br></pre></td></tr></table></figure>
+<h3 id="斜体、粗体、高亮、划线"><a href="#斜体、粗体、高亮、划线" class="headerlink" title="斜体、粗体、高亮、划线"></a><strong>斜体、粗体、高亮、划线</strong></h3><p><em>这是斜体</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*这是斜体*</span><br></pre></td></tr></table></figure></p>
+<p><strong>这是粗体</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**这是粗体**</span><br></pre></td></tr></table></figure></p>
+<p><strong><em>这是斜粗体</em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">***这是斜粗体***</span><br></pre></td></tr></table></figure></p>
+<p><del>划线</del><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~划线~~</span><br></pre></td></tr></table></figure></p>
+<h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a><strong>分割线</strong></h3><hr>
+<p>这样</p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">这样</span><br><span class="line"></span><br><span class="line">----</span><br></pre></td></tr></table></figure>
+<h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a><strong>代码块</strong></h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">```c  （这个c表示代码格式）</span><br><span class="line"></span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line">```  (结尾)</span><br></pre></td></tr></table></figure>
+<p><code>或者这样</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`或者这样`</span><br></pre></td></tr></table></figure></p>
+<pre><code>还可以直接在前面加Tab键
+</code></pre><h3 id="图片和链接"><a href="#图片和链接" class="headerlink" title="图片和链接"></a><strong>图片和链接</strong></h3><p><img src="https://i.postimg.cc/6pPYYqw8/image.jpg" alt="图片"></p>
+<p><a href="https://www.yuanspace.top" target="_blank" rel="noopener">链接</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">![图片](https://i.postimg.cc/6pPYYqw8/image.jpg)</span><br><span class="line"></span><br><span class="line">[链接](https://www.yuanspace.top)</span><br><span class="line"></span><br><span class="line">(说明：括号后面的链接可以是网络链接、本地绝对路径：“C:/photo/photo.jpg”、本地相对路径&quot;./photo.jpg&quot;)</span><br></pre></td></tr></table></figure>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a><strong>表格</strong></h3><table>
+<thead>
+<tr>
+<th>Tables</th>
+<th style="text-align:center">Are</th>
+<th style="text-align:right">Cool</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>col 3 is</td>
+<td style="text-align:center">right-aligned</td>
+<td style="text-align:right">$1600</td>
+</tr>
+<tr>
+<td>col 2 is</td>
+<td style="text-align:center">centered</td>
+<td style="text-align:right">$12</td>
+</tr>
+<tr>
+<td>zebra stripes</td>
+<td style="text-align:center">are neat</td>
+<td style="text-align:right">$1</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">| Tables        | Are           | Cool  |</span><br><span class="line">| ------------- |:-------------:| -----:|</span><br><span class="line">| col 3 is      | right-aligned | $1600 |</span><br><span class="line">| col 2 is      | centered      |   $12 |</span><br><span class="line">| zebra stripes | are neat      |    $1 |</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="Markdown工具推荐"><a href="#Markdown工具推荐" class="headerlink" title="Markdown工具推荐"></a>Markdown工具推荐</h3><h5 id="Windows平台"><a href="#Windows平台" class="headerlink" title="Windows平台"></a>Windows平台</h5><ul>
+<li><a href="https://markdownpad.com" target="_blank" rel="noopener">Markdown Pad</a></li>
+</ul>
+<h4 id="Linux平台"><a href="#Linux平台" class="headerlink" title="Linux平台"></a>Linux平台</h4><ul>
+<li><a href="https://pypi.org/project/ReText/" target="_blank" rel="noopener">ReText</a></li>
+</ul>
+<h4 id="Mac平台"><a href="#Mac平台" class="headerlink" title="Mac平台"></a>Mac平台</h4><ul>
+<li><a href="https://markable.in/" target="_blank" rel="noopener">Markable.in</a></li>
+</ul>
+<h4 id="浏览器插件"><a href="#浏览器插件" class="headerlink" title="浏览器插件"></a>浏览器插件</h4><ul>
+<li>MaDe(chrome)<h4 id="在线编辑器"><a href="#在线编辑器" class="headerlink" title="在线编辑器"></a>在线编辑器</h4></li>
+<li><a href="https://www.mdeditor.com/" target="_blank" rel="noopener">MdEditor</a></li>
+</ul>
+<p>(vscode代码编辑器也是支持markdown语法的、notepad++编辑器也有Markdown语法插件)</p>
+<p>&nbsp;&nbsp;以上就是markdown基本常用语法，如需了解更多，请自行查阅markdown语法手册。本次教程就到这里，希望对大家有所帮助。</p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年01月22日 18:29</p>
+        <p>原始链接： <a class="post-url" href="/2019/01/22/markdown/" title="Markdown使用教程">https://yuanspace.top/2019/01/22/markdown/</a></p>
+        <footer>
+            <a href="https://yuanspace.top">
+                <img src="/images/logo.png" alt="yuan">
+                yuan
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/Alipay.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yuanspace.top/2019/01/22/markdown/&title=《Markdown使用教程》 — yuan's blog&pic=https://i.postimg.cc/ZRjqgpLz/image.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yuanspace.top/2019/01/22/markdown/&title=《Markdown使用教程》 — yuan's blog&source=个人随手笔记.技术博客" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yuanspace.top/2019/01/22/markdown/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Markdown使用教程》 — yuan's blog&url=https://yuanspace.top/2019/01/22/markdown/&via=https://yuanspace.top" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yuanspace.top/2019/01/22/markdown/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://yuanspace.top/2019/01/22/markdown/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/开源项目/" class="color5">开源项目</a>
+      
+    <a href="/tags/教程/" class="color3">教程</a>
+      
+    <a href="/tags/markdown/" class="color4">markdown</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言"><span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#简介"><span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#标题"><span class="post-toc-text">标题</span></a></li></ol><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一级标题"><span class="post-toc-text">一级标题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二级标题"><span class="post-toc-text">二级标题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三级标题"><span class="post-toc-text">三级标题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#四级标题"><span class="post-toc-text">四级标题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#五级标题"><span class="post-toc-text">五级标题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#六级标题"><span class="post-toc-text">六级标题</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#列表"><span class="post-toc-text">列表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#选项和勾选"><span class="post-toc-text">选项和勾选</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#引用"><span class="post-toc-text">引用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#斜体、粗体、高亮、划线"><span class="post-toc-text">斜体、粗体、高亮、划线</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#分割线"><span class="post-toc-text">分割线</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#代码块"><span class="post-toc-text">代码块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#图片和链接"><span class="post-toc-text">图片和链接</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#表格"><span class="post-toc-text">表格</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Markdown工具推荐"><span class="post-toc-text">Markdown工具推荐</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Windows平台"><span class="post-toc-text">Windows平台</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Linux平台"><span class="post-toc-text">Linux平台</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Mac平台"><span class="post-toc-text">Mac平台</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#浏览器插件"><span class="post-toc-text">浏览器插件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#在线编辑器"><span class="post-toc-text">在线编辑器</span></a></li></ol></li></ol>
+        </li></nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/01/04/photospace/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">好用的图床</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 yuan<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://yuanspace.top",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 2
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Markdown/">Markdown</a><a class="category-link" href="/categories/图床推荐/">图床推荐</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/分享/" style="font-size: 10px;">分享</a> <a href="/tags/图床/" style="font-size: 10px;">图床</a> <a href="/tags/开源项目/" style="font-size: 10px;">开源项目</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/新的一年/" style="font-size: 10px;">新的一年</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/分享/" style="font-size: 10px;">分享</a> <a href="/tags/图床/" style="font-size: 10px;">图床</a> <a href="/tags/开源项目/" style="font-size: 10px;">开源项目</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/新的一年/" style="font-size: 10px;">新的一年</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
