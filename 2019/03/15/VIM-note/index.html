@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>VIM使用笔记 | yuan&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="yuan,yuan's Blog">
+  
+  <meta name="description" content="vim配置修改vim的配置实现需要对~/.vimrc文件进行修改,下面是我常用的vim配置。注：vimrc的注释符为 “ 常规设置123456789101112131415&amp;quot;设置行号set nu&amp;quot;在上下移动光标时，光标上方或下方保留显示的行数set scrolloff=7&amp;quot;设置tab键set softtabstop=4set tabstop=4&amp;quot;自动缩进se">
+<meta name="keywords" content="vim,note">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VIM使用笔记">
+<meta property="og:url" content="https://yuanspace.top/2019/03/15/VIM-note/index.html">
+<meta property="og:site_name" content="yuan&#39;s blog">
+<meta property="og:description" content="vim配置修改vim的配置实现需要对~/.vimrc文件进行修改,下面是我常用的vim配置。注：vimrc的注释符为 “ 常规设置123456789101112131415&amp;quot;设置行号set nu&amp;quot;在上下移动光标时，光标上方或下方保留显示的行数set scrolloff=7&amp;quot;设置tab键set softtabstop=4set tabstop=4&amp;quot;自动缩进se">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-15T09:22:29.971Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="VIM使用笔记">
+<meta name="twitter:description" content="vim配置修改vim的配置实现需要对~/.vimrc文件进行修改,下面是我常用的vim配置。注：vimrc的注释符为 “ 常规设置123456789101112131415&amp;quot;设置行号set nu&amp;quot;在上下移动光标时，光标上方或下方保留显示的行数set scrolloff=7&amp;quot;设置tab键set softtabstop=4set tabstop=4&amp;quot;自动缩进se">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">yuan&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        yuan&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        你想飞，就努力长出翅膀
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="yuan" target="_blank" href="//Y-mouse.github.io">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/Y-mouse">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="weibo" target="_blank" href="//weibo.com/xyuansky">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-VIM-note" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      VIM使用笔记
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/vim/">vim</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-03-15
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="vim配置"><a href="#vim配置" class="headerlink" title="vim配置"></a>vim配置</h2><p>修改vim的配置实现需要对~/.vimrc文件进行修改,下面是我常用的vim配置。<br>注：vimrc的注释符为 “</p>
+<h3 id="常规设置"><a href="#常规设置" class="headerlink" title="常规设置"></a>常规设置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&quot;设置行号</span><br><span class="line">set nu</span><br><span class="line">&quot;在上下移动光标时，光标上方或下方保留显示的行数</span><br><span class="line">set scrolloff=7</span><br><span class="line">&quot;设置tab键</span><br><span class="line">set softtabstop=4</span><br><span class="line">set tabstop=4</span><br><span class="line">&quot;自动缩进</span><br><span class="line">set autoindent</span><br><span class="line">set cindent</span><br><span class="line">set shiftwidth=4</span><br><span class="line">&quot;空格进入搜索</span><br><span class="line">nnoremap / /\v</span><br><span class="line">vnoremap / /\v</span><br><span class="line">&quot;set foldenable   &quot;开始折叠,代码折叠</span><br></pre></td></tr></table></figure>
+<h3 id="文件编码设置"><a href="#文件编码设置" class="headerlink" title="文件编码设置"></a>文件编码设置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&quot;文件编码 默认编码为utf-8 ，在fileencoding中加入cp936解决中文乱码问题</span><br><span class="line">set encoding=utf-8</span><br><span class="line">set fenc=utf-8</span><br><span class="line">set fileencodings=ucs-bom,utf-8,cp936</span><br><span class="line">&quot;if(g:iswindows==1)</span><br><span class="line">&quot;	source $VIMRUNTIME/delmenu.vim</span><br><span class="line">&quot;	source $VIMRUNTIME/menu.vim</span><br><span class="line">&quot;	language messages zh_CN.utf-8</span><br><span class="line">&quot;endif</span><br><span class="line">if v:lang =~?&apos;^zh\|ja\|ko&apos;</span><br><span class="line">	set ambiwidth=double</span><br><span class="line">endif</span><br><span class="line">set nobomb</span><br></pre></td></tr></table></figure>
+<h3 id="光标设置"><a href="#光标设置" class="headerlink" title="光标设置"></a>光标设置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&quot;关闭方向键，强迫自己用hjkl</span><br><span class="line">map &lt;Left&gt; &lt;Nop&gt;</span><br><span class="line">map &lt;Right&gt; &lt;Nop&gt;</span><br><span class="line">map &lt;Up&gt; &lt;Nop&gt;</span><br><span class="line">map &lt;Down&gt; &lt;Nop&gt;</span><br><span class="line">&quot;swap 换行显示时，使用hjkl体验更好</span><br><span class="line">&quot;同物理行上线直接跳</span><br><span class="line">nnoremap k gk</span><br><span class="line">nnoremap gk k</span><br><span class="line">nnoremap j gj</span><br><span class="line">nnoremap gj j</span><br><span class="line">&quot;分配窗口切换时，直接使用ctrl+h/j/k/l</span><br><span class="line">map &lt;C-j&gt; &lt;C-W&gt;j</span><br><span class="line">map &lt;C-k&gt; &lt;C-W&gt;k</span><br><span class="line">map &lt;C-h&gt; &lt;C-W&gt;h</span><br><span class="line">map &lt;C-l&gt; &lt;C-W&gt;l</span><br><span class="line">&quot; H 和 L 跳转行首行末</span><br><span class="line">noremap H ^</span><br><span class="line">noremap L $</span><br><span class="line"></span><br><span class="line">&quot;鼠标暂不启用</span><br><span class="line">set mouse-=a</span><br></pre></td></tr></table></figure>
+<h3 id="设置退格键"><a href="#设置退格键" class="headerlink" title="设置退格键"></a>设置退格键</h3><p>通过源码安装vim的时候，由于vim对vi的兼容，退格键可能会出现不能删除换行符、不能删除之前输入的文本、不能删除tab，，所以需要对退格键进行设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;设置退格键  indent:删除缩进字段  eol：删除换行  start：删除此前的输入</span><br><span class="line">set backspace=indent,eol,start</span><br></pre></td></tr></table></figure>
+<h3 id="状态栏设置"><a href="#状态栏设置" class="headerlink" title="状态栏设置"></a>状态栏设置</h3><p>vim默认不显示状态栏  需要自己设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&quot;设置标签栏</span><br><span class="line">&quot;set showtabline=2</span><br><span class="line">&quot;set guioptions-=m           &quot; 隐藏菜单栏</span><br><span class="line">&quot;set statusline=\ %&lt;%F[%1*%M%*%n%R%H]%=\ %y\ %0(%&#123;&amp;fileformat&#125;\ %&#123;&amp;encoding&#125;\ %c:%l/%L%)\</span><br><span class="line">&quot; 设置在状态行显示的信息</span><br><span class="line">&quot;set foldcolumn=0</span><br><span class="line">&quot;set foldmethod=indent </span><br><span class="line">&quot;set foldlevel=3 </span><br><span class="line">&quot; 我的状态行显示的内容（包括文件类型和解码）</span><br><span class="line">&quot;set statusline=%F%m%r%h%w\ [FORMAT=%&#123;&amp;ff&#125;]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %&#123;strftime(\&quot;%d/%m/%y\ -\ %H:%M\&quot;)&#125;\ %&#123;\&quot;[fenc=\&quot;.(&amp;fenc==\&quot;\&quot;?&amp;enc:&amp;fenc).((exists(\&quot;+bomb\&quot;)\ &amp;&amp;\ &amp;bomb)?\&quot;+\&quot;:\&quot;\&quot;).\&quot;]\&quot;&#125;</span><br><span class="line">set statusline=[%F]%y%r%m%*%=%&#123;\&quot;[fenc=\&quot;.(&amp;fenc==\&quot;\&quot;?&amp;enc:&amp;fenc).((exists(\&quot;+bomb\&quot;)\ &amp;&amp;\ &amp;bomb)?\&quot;+\&quot;:\&quot;\&quot;).\&quot;]\&quot;&#125;\ [Line:%l/%L,Column:%c][%p%%]</span><br><span class="line">&quot; 设置状态行显示常用信息</span><br><span class="line">&quot; %F 完整文件路径名</span><br><span class="line">&quot; %m 当前缓冲被修改标记</span><br><span class="line">&quot; %m 当前缓冲只读标记</span><br><span class="line">&quot; %h 帮助缓冲标记</span><br><span class="line">&quot; %w 预览缓冲标记</span><br><span class="line">&quot; %Y 文件类型</span><br><span class="line">&quot; %b ASCII值</span><br><span class="line">&quot; %B 十六进制值</span><br><span class="line">&quot; %l 行数</span><br><span class="line">&quot; %v 列数</span><br><span class="line">&quot; %p 当前行数占总行数的的百分比</span><br><span class="line">&quot; %L 总行数</span><br><span class="line">&quot; %&#123;...&#125; 评估表达式的值</span><br><span class="line">&quot;%&#123;&quot;[fenc=&quot;.(&amp;fenc==&quot;&quot;?&amp;enc:&amp;fenc).((exists(&quot;+bomb&quot;) &amp;&amp; &amp;bomb)?&quot;+&quot;:&quot;&quot;).&quot;]&quot;&#125; &quot;显示文件编码</span><br><span class="line">&quot; %&#123;&amp;ff&#125; 显示文件类型</span><br><span class="line">&quot; 总是显示状态行</span><br><span class="line">set laststatus=2</span><br></pre></td></tr></table></figure>
+<h3 id="高亮设置"><a href="#高亮设置" class="headerlink" title="高亮设置"></a>高亮设置</h3><p>vim配色方案由于篇幅过大，另写了一篇，看这里：<a href="https://yuanspace.top/2019/03/15/VIM-color/">https://yuanspace.top/2019/03/15/VIM-color/</a></p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年03月15日 17:22</p>
+        <p>原始链接： <a class="post-url" href="/2019/03/15/VIM-note/" title="VIM使用笔记">https://yuanspace.top/2019/03/15/VIM-note/</a></p>
+        <footer>
+            <a href="https://yuanspace.top">
+                <img src="/images/logo.png" alt="yuan">
+                yuan
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/Alipay.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yuanspace.top/2019/03/15/VIM-note/&title=《VIM使用笔记》 — yuan's blog&pic=https://i.loli.net/2019/03/15/5c8b6d15d2107.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yuanspace.top/2019/03/15/VIM-note/&title=《VIM使用笔记》 — yuan's blog&source=个人随手笔·技术博客" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yuanspace.top/2019/03/15/VIM-note/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《VIM使用笔记》 — yuan's blog&url=https://yuanspace.top/2019/03/15/VIM-note/&via=https://yuanspace.top" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yuanspace.top/2019/03/15/VIM-note/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://yuanspace.top/2019/03/15/VIM-note/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/vim/" class="color4">vim</a>
+      
+    <a href="/tags/note/" class="color5">note</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#vim配置"><span class="post-toc-text">vim配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#常规设置"><span class="post-toc-text">常规设置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件编码设置"><span class="post-toc-text">文件编码设置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#光标设置"><span class="post-toc-text">光标设置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设置退格键"><span class="post-toc-text">设置退格键</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#状态栏设置"><span class="post-toc-text">状态栏设置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#高亮设置"><span class="post-toc-text">高亮设置</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2019/03/15/VIM-color/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          VIM配色方案
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2019/03/01/Bendizip/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">Bendizip命令行参数</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 yuan<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://yuanspace.top",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 2
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Markdown/">Markdown</a><a class="category-link" href="/categories/bandizip/">bandizip</a><a class="category-link" href="/categories/java-package/">java package</a><a class="category-link" href="/categories/mingw/">mingw</a><a class="category-link" href="/categories/vim/">vim</a><a class="category-link" href="/categories/图床推荐/">图床推荐</a><a class="category-link" href="/categories/最小编译器/">最小编译器</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/7z/" style="font-size: 10px;">7z</a> <a href="/tags/C-C/" style="font-size: 10px;">C/C++</a> <a href="/tags/c/" style="font-size: 10px;">c</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/gcc/" style="font-size: 10px;">gcc</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/note/" style="font-size: 10px;">note</a> <a href="/tags/notepad/" style="font-size: 10px;">notepad++</a> <a href="/tags/package/" style="font-size: 10px;">package</a> <a href="/tags/tcc/" style="font-size: 10px;">tcc</a> <a href="/tags/vim/" style="font-size: 15px;">vim</a> <a href="/tags/zip/" style="font-size: 10px;">zip</a> <a href="/tags/分享/" style="font-size: 10px;">分享</a> <a href="/tags/图床/" style="font-size: 10px;">图床</a> <a href="/tags/开源项目/" style="font-size: 20px;">开源项目</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/新的一年/" style="font-size: 10px;">新的一年</a> <a href="/tags/设置环境变量/" style="font-size: 10px;">设置环境变量</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/7z/" style="font-size: 10px;">7z</a> <a href="/tags/C-C/" style="font-size: 10px;">C/C++</a> <a href="/tags/c/" style="font-size: 10px;">c</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/gcc/" style="font-size: 10px;">gcc</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/note/" style="font-size: 10px;">note</a> <a href="/tags/notepad/" style="font-size: 10px;">notepad++</a> <a href="/tags/package/" style="font-size: 10px;">package</a> <a href="/tags/tcc/" style="font-size: 10px;">tcc</a> <a href="/tags/vim/" style="font-size: 15px;">vim</a> <a href="/tags/zip/" style="font-size: 10px;">zip</a> <a href="/tags/分享/" style="font-size: 10px;">分享</a> <a href="/tags/图床/" style="font-size: 10px;">图床</a> <a href="/tags/开源项目/" style="font-size: 20px;">开源项目</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/新的一年/" style="font-size: 10px;">新的一年</a> <a href="/tags/设置环境变量/" style="font-size: 10px;">设置环境变量</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
