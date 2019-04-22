@@ -3,23 +3,33 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Bendizip命令行参数 | yuan&#39;s blog</title>
+  <title>解释型C语言 | yuan&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="yuan,yuan's Blog">
   
-  <meta name="description" content="bandizip命令行参数Bandizip.exe &amp;lt; archive&amp;gt;   Bandizip.exe &amp;lt; command&amp;gt;  [&amp;lt; switches&amp;gt;…] &amp;lt; archive&amp;gt; [&amp;lt; files&amp;gt;…] [&amp;lt;path_to_extract&amp;gt;]  Bandizip.exe &amp;lt; bcommand&amp;gt; [&amp;lt; swit">
-<meta name="keywords" content="zip,7z">
+  <meta name="description" content="无需编译，直接运行C语言源代码文件，将C语言当脚本文件使用。&amp;nbsp;&amp;nbsp; 所需工具：tcc 安装tcctcc介绍：见我上一篇文章 配置最小c语言IDE&amp;nbsp;&amp;nbsp; 下载链接：tcc&amp;ensp;&amp;ensp;提取码：d3q5 解压下载好的压缩包到电脑里的你喜欢放的位置&amp;nbsp;&amp;nbsp; 设置关联键盘win + R 键调出运行窗口，输入regedit打开注册表&amp;nbsp;&amp;">
+<meta name="keywords" content="开源项目,c,tcc,解释型语言">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Bendizip命令行参数">
-<meta property="og:url" content="https://yuanspace.top/2019/03/01/Bendizip/index.html">
+<meta property="og:title" content="解释型C语言">
+<meta property="og:url" content="https://yuanspace.top/2019/04/23/tcc/index.html">
 <meta property="og:site_name" content="yuan&#39;s blog">
-<meta property="og:description" content="bandizip命令行参数Bandizip.exe &amp;lt; archive&amp;gt;   Bandizip.exe &amp;lt; command&amp;gt;  [&amp;lt; switches&amp;gt;…] &amp;lt; archive&amp;gt; [&amp;lt; files&amp;gt;…] [&amp;lt;path_to_extract&amp;gt;]  Bandizip.exe &amp;lt; bcommand&amp;gt; [&amp;lt; swit">
+<meta property="og:description" content="无需编译，直接运行C语言源代码文件，将C语言当脚本文件使用。&amp;nbsp;&amp;nbsp; 所需工具：tcc 安装tcctcc介绍：见我上一篇文章 配置最小c语言IDE&amp;nbsp;&amp;nbsp; 下载链接：tcc&amp;ensp;&amp;ensp;提取码：d3q5 解压下载好的压缩包到电脑里的你喜欢放的位置&amp;nbsp;&amp;nbsp; 设置关联键盘win + R 键调出运行窗口，输入regedit打开注册表&amp;nbsp;&amp;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-01T05:14:00.000Z">
+<meta property="og:image" content="https://i.loli.net/2019/04/22/5cbd6a575c9fd.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/04/22/5cbd6a57653fb.png">
+<meta property="og:image" content="https://i.loli.net/2019/04/22/5cbd6a57497d0.png">
+<meta property="og:image" content="https://i.loli.net/2019/04/22/5cbd6a576a5e0.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/04/22/5cbd6a575f2c2.png">
+<meta property="og:image" content="https://i.loli.net/2019/04/22/5cbd6a5768c70.png">
+<meta property="og:image" content="https://i.loli.net/2019/04/22/5cbd6a573bb9f.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/04/22/5cbd6a5768e59.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/04/22/5cbd6a5769171.jpg">
+<meta property="og:updated_time" content="2019-04-22T08:23:31.355Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bendizip命令行参数">
-<meta name="twitter:description" content="bandizip命令行参数Bandizip.exe &amp;lt; archive&amp;gt;   Bandizip.exe &amp;lt; command&amp;gt;  [&amp;lt; switches&amp;gt;…] &amp;lt; archive&amp;gt; [&amp;lt; files&amp;gt;…] [&amp;lt;path_to_extract&amp;gt;]  Bandizip.exe &amp;lt; bcommand&amp;gt; [&amp;lt; swit">
+<meta name="twitter:title" content="解释型C语言">
+<meta name="twitter:description" content="无需编译，直接运行C语言源代码文件，将C语言当脚本文件使用。&amp;nbsp;&amp;nbsp; 所需工具：tcc 安装tcctcc介绍：见我上一篇文章 配置最小c语言IDE&amp;nbsp;&amp;nbsp; 下载链接：tcc&amp;ensp;&amp;ensp;提取码：d3q5 解压下载好的压缩包到电脑里的你喜欢放的位置&amp;nbsp;&amp;nbsp; 设置关联键盘win + R 键调出运行窗口，输入regedit打开注册表&amp;nbsp;&amp;">
+<meta name="twitter:image" content="https://i.loli.net/2019/04/22/5cbd6a575c9fd.jpg">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -107,14 +117,14 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-Bendizip" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-tcc" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      Bendizip命令行参数
+      解释型C语言
     </h1>
     <div class="post-title-bar">
       <ul>
@@ -122,12 +132,12 @@
               <li>
                   <i class="fa fa-book"></i>
                   
-                      <a href="/categories/bandizip/">bandizip</a>
+                      <a href="/categories/脚本/">脚本</a>
                   
               </li>
           
         <li>
-          <i class="fa fa-calendar"></i>  2019-03-01
+          <i class="fa fa-calendar"></i>  2019-04-23
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -143,61 +153,29 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h2 id="bandizip命令行参数"><a href="#bandizip命令行参数" class="headerlink" title="bandizip命令行参数"></a>bandizip命令行参数</h2><p>Bandizip.exe &lt; archive&gt;  </p>
-<p>Bandizip.exe &lt; command&gt;  [&lt; switches&gt;…] &lt; archive&gt; [&lt; files&gt;…] [&lt;path_to_extract&gt;] </p>
-<p>Bandizip.exe &lt; bcommand&gt; [&lt; switches&gt;…] [&lt; files&gt;…] </p>
-<h4 id="lt-archive-gt-压缩包"><a href="#lt-archive-gt-压缩包" class="headerlink" title="&lt; archive &gt; 压缩包"></a>&lt; archive &gt; 压缩包</h4><p>  执行在设置中指定的操作。 通常只打开压缩包。 </p>
-<h4 id="lt-Commands-gt-命令"><a href="#lt-Commands-gt-命令" class="headerlink" title="&lt; Commands&gt; 命令"></a>&lt; Commands&gt; 命令</h4><p>  a : 添加文件到压缩包</p>
-<p>  x : 用完整路径解压文件 </p>
-<p>  t : 测试压缩包完整性 </p>
-<p>  d : 删除压缩包中文件 </p>
-<p>  c : 创建新档案（或覆盖现有文件）</p>
-<p>  cd: 显示“新建压缩包”对话框 </p>
-<h4 id="lt-BCommands-gt-批处理命令"><a href="#lt-BCommands-gt-批处理命令" class="headerlink" title="&lt; BCommands&gt; 批处理命令"></a>&lt; BCommands&gt; 批处理命令</h4><p>  bc:要压缩的每个文件/文件夹名称。 若存在相同的压缩包名，则以“文件名(2)”格式创建压缩包。若未指定目标文件夹，则默认目标文件夹为原始文件或文件夹所在的路径。 </p>
-<p>  bx: 将每个压缩包分别解压到目标文件夹中。 若未指定目标文件夹，则默认目标文件夹为每个压缩文件所在的路径。 </p>
-<p>  bt: 测试压缩包 </p>
-<h4 id="lt-Switches-gt-开关"><a href="#lt-Switches-gt-开关" class="headerlink" title="&lt; Switches&gt; 开关"></a>&lt; Switches&gt; 开关</h4><p>  <code>-</code>             停止开关扫描 </p>
-<p>  <code>-l:&lt;0...9&gt;</code>     设置压缩级别（0：存储，5：默认，9：最大）</p>
-<p>  <code>-r-</code>            禁用递归（默认）</p>
-<p>  <code>-r</code>             启用递归子目录</p>
-<p>  <code>-aoa</code>           无需提示覆盖全部现有文件</p>
-<p>  <code>-aos</code>           跳过已有文件的解压 </p>
-<p>  <code>-aou</code>           自动重命名解压的文件 （例如，name.txt将被重命名为name (2).txt）</p>
-<p>  <code>-sfx:[{name}]</code>  创建SFX压缩包 </p>
-<p>  <code>-zopfli</code>        使用Zopfli作为默认压缩算法 </p>
-<p>  <code>-p:{password}</code>  设置密码 </p>
-<p>  <code>-o:{dir}</code>       指定目标文件夹 </p>
-<p>  <code>-y</code>             全选“是” </p>
-<p>  <code>-fmt:{fmt}</code>     指定压缩格式<br>                 (zip, zipx, exe, tar, tgz, lzh, iso, 7z, gz, xz) </p>
-<p>  <code>-v:{size}</code>      指定分卷大小 (-v:1000000 -v:1440k -v:100MB …) </p>
-<h4 id="lt-Switches-gt-（仅针对Banzip）"><a href="#lt-Switches-gt-（仅针对Banzip）" class="headerlink" title="&lt; Switches&gt; （仅针对Banzip）"></a>&lt; Switches&gt; （仅针对Banzip）</h4><p>  <code>-email</code>         压缩并邮件发送 </p>
-<p>  <code>-target:dlg</code>    显示“目标路径选择”对话框 </p>
-<p>  <code>-target:auto</code>   智能解压到目标路径 </p>
-<p>  <code>-target:name</code>   按压缩包名称解压到目标路径中文件夹下 </p>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><h4 id="打开压缩包"><a href="#打开压缩包" class="headerlink" title="打开压缩包"></a>打开压缩包</h4><blockquote>
-<p>Bandizip.exe sample.zip</p>
-</blockquote>
-<h4 id="新建压缩包（覆盖已有文件）"><a href="#新建压缩包（覆盖已有文件）" class="headerlink" title="新建压缩包（覆盖已有文件）"></a>新建压缩包（覆盖已有文件）</h4><blockquote>
-<p>Bandizip.exe c c:\sample.zip c:\src\<br>Bandizip.exe c c:\sample.zip c:\src1\ c:\src2\</p>
-</blockquote>
-<h4 id="添加文件到压缩包"><a href="#添加文件到压缩包" class="headerlink" title="添加文件到压缩包"></a>添加文件到压缩包</h4><blockquote>
-<p>Bandizip.exe a c:\sample.zip c:\src\sample.txt<br>Bandizip.exe a c:\sample.zip c:\src\sample1.txt c:\src\sample2.txt<br>Bandizip.exe a c:\sample.zip c:\src*.txt c:\src*.jpg</p>
-</blockquote>
-<h4 id="删除压缩包中文件"><a href="#删除压缩包中文件" class="headerlink" title="删除压缩包中文件"></a>删除压缩包中文件</h4><blockquote>
-<p>Bandizip.exe d c:\sample.zip sample.txt<br>Bandizip.exe d c:\sample.zip *.txt</p>
-</blockquote>
-<h4 id="将压缩包解压到目标路径"><a href="#将压缩包解压到目标路径" class="headerlink" title="将压缩包解压到目标路径"></a>将压缩包解压到目标路径</h4><blockquote>
-<p>Bandizip.exe x -o:c:\dest\ c:\sample.zip</p>
-</blockquote>
-<h4 id="添加文件到压缩包，并设置密码为Passw0rd，无提示覆盖全部已有文件并关闭对话框"><a href="#添加文件到压缩包，并设置密码为Passw0rd，无提示覆盖全部已有文件并关闭对话框" class="headerlink" title="添加文件到压缩包，并设置密码为Passw0rd，无提示覆盖全部已有文件并关闭对话框"></a>添加文件到压缩包，并设置密码为Passw0rd，无提示覆盖全部已有文件并关闭对话框</h4><blockquote>
-<p>Bandizip.exe a -y -p:Passw0rd test.zip c:\src d:\src</p>
-</blockquote>
-<p>搬运自官方文档：<a href="https://en.bandisoft.com/bandizip/help/parameter/" target="_blank" rel="noopener">https://en.bandisoft.com/bandizip/help/parameter/</a></p>
-
+            <p>无需编译，直接运行C语言源代码文件，将C语言当脚本文件使用。<br>&nbsp;&nbsp;</p>
+<p>所需工具：tcc</p>
+<h3 id="安装tcc"><a href="#安装tcc" class="headerlink" title="安装tcc"></a>安装tcc</h3><p>tcc介绍：见我上一篇文章 <a href="https://www.yuanspace.top/2019/02/10/noteCompile/#more" target="_blank" rel="noopener">配置最小c语言IDE</a><br>&nbsp;&nbsp;</p>
+<p>下载链接：<a href="https://pan.baidu.com/s/1FCJxK4W3_Tw92xaw7mM9sg" target="_blank" rel="noopener">tcc</a>&ensp;&ensp;<br>提取码：d3q5</p>
+<p>解压下载好的压缩包到电脑里的你喜欢放的位置<br>&nbsp;&nbsp;</p>
+<h3 id="设置关联"><a href="#设置关联" class="headerlink" title="设置关联"></a>设置关联</h3><p>键盘<strong>win + R</strong> 键调出运行窗口，输入<strong>regedit</strong>打开注册表<br>&nbsp;&nbsp;<br><img src="https://i.loli.net/2019/04/22/5cbd6a575c9fd.jpg" alt="winR.png.jpg"></p>
+<p>进入目录：\HKEY_CLASSES_ROOT\.c<br>&nbsp;&nbsp;<br><img src="https://i.loli.net/2019/04/22/5cbd6a57653fb.png" alt=".c.png"></p>
+<p>修改右侧第一个默认值修改为：tccfile<br>&nbsp;&nbsp;<br><img src="https://i.loli.net/2019/04/22/5cbd6a57497d0.png" alt="tccfile.png"><br>&nbsp;&nbsp;</p>
+<h3 id="设置运行命令"><a href="#设置运行命令" class="headerlink" title="设置运行命令"></a>设置运行命令</h3><p>关联好之后，设置运行命令</p>
+<p>在\HKEY_CLASSES_ROOT目录上右键→新建→项，并命名为<strong>tccfile</strong><br>&nbsp;&nbsp;<br><img src="https://i.loli.net/2019/04/22/5cbd6a576a5e0.jpg" alt="root.jpg"></p>
+<p>在刚才所新建的tccfile下新建如图所示的项：<br>&nbsp;&nbsp;<br><img src="https://i.loli.net/2019/04/22/5cbd6a575f2c2.png" alt="tccico.png"></p>
+<p>并修改DefaultIcon的默认值，也就是图中箭头所指，此处填的是解压压缩包下的zihe.ico文件的路径，根据自己刚才的解压路径修改。</p>
+<p>并在修改command的默认值，如图：<br>&nbsp;&nbsp;<br><img src="https://i.loli.net/2019/04/22/5cbd6a5768c70.png" alt="cmd.png"><br>（其中用横线画出来的是解压压缩包中tcc.exe文件的路径，根据自己存放位置进行修改）</p>
+<p>完成以上操作后，即可关闭注册表。</p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>在桌面上或其他地方新建一个以.c为后缀的c文件，会发现文件已经默认关联了图标(如果发现没成功，请根据重新执行上面操作)<br>&nbsp;&nbsp;<br><img src="https://i.loli.net/2019/04/22/5cbd6a573bb9f.jpg" alt="ico.jpg"></p>
+<p>我们用文本编辑器打开.c文件，编写C语言代码<br>&nbsp;&nbsp;<br><img src="https://i.loli.net/2019/04/22/5cbd6a5768e59.jpg" alt="code.jpg"></p>
+<p>编写完成，保存关闭编辑器，直接双击.c文件，即可运行<br>&nbsp;&nbsp;<br><img src="https://i.loli.net/2019/04/22/5cbd6a5769171.jpg" alt="end.jpg"></p>
+<p>此后，在本电脑上即可直接运行C语言源代码文件</p>
+<h2 id="nbsp"><a href="#nbsp" class="headerlink" title="&nbsp;"></a>&nbsp;</h2><center>– ©博主原创，转载请注明出处 –</center>
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年03月01日 13:14</p>
-        <p>原始链接： <a class="post-url" href="/2019/03/01/Bendizip/" title="Bendizip命令行参数">https://yuanspace.top/2019/03/01/Bendizip/</a></p>
+        <p>最后更新： 2019年04月22日 16:23</p>
+        <p>原始链接： <a class="post-url" href="/2019/04/23/tcc/" title="解释型C语言">https://yuanspace.top/2019/04/23/tcc/</a></p>
         <footer>
             <a href="https://yuanspace.top">
                 <img src="/images/logo.png" alt="yuan">
@@ -254,7 +232,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yuanspace.top/2019/03/01/Bendizip/&title=《Bendizip命令行参数》 — yuan's blog&pic=https://www.bandisoft.com/bandizip/screenshots/screenshot-1.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yuanspace.top/2019/04/23/tcc/&title=《解释型C语言》 — yuan's blog&pic=https://i.loli.net/2019/04/22/5cbd6a5769171.jpg" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -264,22 +242,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yuanspace.top/2019/03/01/Bendizip/&title=《Bendizip命令行参数》 — yuan's blog&source=个人随手笔·技术博客" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yuanspace.top/2019/04/23/tcc/&title=《解释型C语言》 — yuan's blog&source=个人随手笔·技术博客" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yuanspace.top/2019/03/01/Bendizip/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yuanspace.top/2019/04/23/tcc/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Bendizip命令行参数》 — yuan's blog&url=https://yuanspace.top/2019/03/01/Bendizip/&via=https://yuanspace.top" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《解释型C语言》 — yuan's blog&url=https://yuanspace.top/2019/04/23/tcc/&via=https://yuanspace.top" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yuanspace.top/2019/03/01/Bendizip/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yuanspace.top/2019/04/23/tcc/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -289,7 +267,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://yuanspace.top/2019/03/01/Bendizip/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://yuanspace.top/2019/04/23/tcc/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -301,9 +279,13 @@
   <li class="article-footer-tags">
     <i class="fa fa-tags"></i>
       
-    <a href="/tags/zip/" class="color4">zip</a>
+    <a href="/tags/开源项目/" class="color5">开源项目</a>
       
-    <a href="/tags/7z/" class="color3">7z</a>
+    <a href="/tags/c/" class="color2">c</a>
+      
+    <a href="/tags/tcc/" class="color4">tcc</a>
+      
+    <a href="/tags/解释型语言/" class="color1">解释型语言</a>
       
   </li>
 
@@ -316,26 +298,16 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bandizip命令行参数"><span class="post-toc-text">bandizip命令行参数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#lt-archive-gt-压缩包"><span class="post-toc-text">&lt; archive &gt; 压缩包</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#lt-Commands-gt-命令"><span class="post-toc-text">&lt; Commands&gt; 命令</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#lt-BCommands-gt-批处理命令"><span class="post-toc-text">&lt; BCommands&gt; 批处理命令</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#lt-Switches-gt-开关"><span class="post-toc-text">&lt; Switches&gt; 开关</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#lt-Switches-gt-（仅针对Banzip）"><span class="post-toc-text">&lt; Switches&gt; （仅针对Banzip）</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#示例"><span class="post-toc-text">示例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#打开压缩包"><span class="post-toc-text">打开压缩包</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#新建压缩包（覆盖已有文件）"><span class="post-toc-text">新建压缩包（覆盖已有文件）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#添加文件到压缩包"><span class="post-toc-text">添加文件到压缩包</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#删除压缩包中文件"><span class="post-toc-text">删除压缩包中文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#将压缩包解压到目标路径"><span class="post-toc-text">将压缩包解压到目标路径</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#添加文件到压缩包，并设置密码为Passw0rd，无提示覆盖全部已有文件并关闭对话框"><span class="post-toc-text">添加文件到压缩包，并设置密码为Passw0rd，无提示覆盖全部已有文件并关闭对话框</span></a></li></ol></li></ol>
-        </nav>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装tcc"><span class="post-toc-text">安装tcc</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设置关联"><span class="post-toc-text">设置关联</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设置运行命令"><span class="post-toc-text">设置运行命令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#测试"><span class="post-toc-text">测试</span></a></li></ol><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#nbsp"><span class="post-toc-text"> </span></a>
+        </li></nav>
     </aside>
     
 
 <nav id="article-nav">
   
-    <a href="/2019/03/15/VIM-note/" id="article-nav-newer" class="article-nav-link-wrap">
-
-      <span class="article-nav-title">
-        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
-        
-          VIM使用笔记
-        
-      </span>
-    </a>
   
-  
-    <a href="/2019/02/10/noteCompile/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">配置最小c语言IDE</span>
+    <a href="/2019/03/15/VIM-color/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">VIM配色方案</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   

@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/02/04/5c57f84abb7d6.png">
 <meta property="og:image" content="https://i.loli.net/2019/02/04/5c57f84a8c94f.png">
 <meta property="og:image" content="https://i.loli.net/2019/02/04/5c57f9bc393c7.jpg">
-<meta property="og:updated_time" content="2019-02-15T08:31:56.558Z">
+<meta property="og:updated_time" content="2019-04-22T08:23:56.934Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java解决程序包不存在问题">
 <meta name="twitter:description" content="由于学习C/C++的习惯，不太喜欢用IDE来写代码，所以在学习java的时候，也没有使用教程上的IDE来编写程序。编译java文件也是用命令行编译，所以在学习java中的package的时候遇到程序包 xxx 不存在的问题。&amp;nbsp;如图：&amp;nbsp;&amp;nbsp;经过两个小时的不断百度、谷歌、尝试，终于解决了问题，也得出了结论。&amp;nbsp;&amp;nbsp;我以user.java为自创包内的类，stu">
@@ -161,10 +161,10 @@
 </ol>
 <p><img src="https://i.loli.net/2019/02/04/5c57f9bc393c7.jpg" alt="不同目录"><br>&nbsp;&nbsp;<br>文件内容和第一种情况略有不同：user.java文件前面加上 package oo;  ， student.java文件加上package top; &ensp;&ensp;import oo.user;<br>&nbsp;&nbsp;<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">package</span> top;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> oo.user;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">student</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        user u = <span class="keyword">new</span> user();</span><br><span class="line">        u.a = <span class="number">3</span>;</span><br><span class="line">        System.out.println(u.a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>&nbsp;&nbsp;<br>在top目录下编译命令为<code>javac -cp ../ student.java</code> , 执行：java -cp ../ top.student<br>&nbsp;&nbsp;<br>在src目录下编译运行:<br>&nbsp;&nbsp;<br>编译：javac top/student.java &ensp;&ensp; 运行 : java top/student</p>
-
+<h2 id="nbsp"><a href="#nbsp" class="headerlink" title="&nbsp;"></a>&nbsp;</h2><center>– ©博主原创，转载请注明出处 –</center>
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年02月15日 16:31</p>
+        <p>最后更新： 2019年04月22日 16:23</p>
         <p>原始链接： <a class="post-url" href="/2019/02/04/JavaPackage/" title="java解决程序包不存在问题">https://yuanspace.top/2019/02/04/JavaPackage/</a></p>
         <footer>
             <a href="https://yuanspace.top">
@@ -284,6 +284,12 @@
 </article>
 
 
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#nbsp"><span class="post-toc-text"> </span></a></li></ol>
+        </nav>
+    </aside>
+    
 
 <nav id="article-nav">
   
@@ -361,10 +367,10 @@
 <div class="sidebar-menu-box" id="sidebar-menu-box">
     <div class="sidebar-menu-box-container">
         <div id="sidebar-menu-box-categories">
-            <a class="category-link" href="/categories/Markdown/">Markdown</a><a class="category-link" href="/categories/bandizip/">bandizip</a><a class="category-link" href="/categories/java-package/">java package</a><a class="category-link" href="/categories/mingw/">mingw</a><a class="category-link" href="/categories/vim/">vim</a><a class="category-link" href="/categories/图床推荐/">图床推荐</a><a class="category-link" href="/categories/最小编译器/">最小编译器</a>
+            <a class="category-link" href="/categories/Markdown/">Markdown</a><a class="category-link" href="/categories/bandizip/">bandizip</a><a class="category-link" href="/categories/java-package/">java package</a><a class="category-link" href="/categories/mingw/">mingw</a><a class="category-link" href="/categories/vim/">vim</a><a class="category-link" href="/categories/图床推荐/">图床推荐</a><a class="category-link" href="/categories/最小编译器/">最小编译器</a><a class="category-link" href="/categories/脚本/">脚本</a>
         </div>
         <div id="sidebar-menu-box-tags">
-            <a href="/tags/7z/" style="font-size: 10px;">7z</a> <a href="/tags/C-C/" style="font-size: 10px;">C/C++</a> <a href="/tags/c/" style="font-size: 10px;">c</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/gcc/" style="font-size: 10px;">gcc</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/note/" style="font-size: 10px;">note</a> <a href="/tags/notepad/" style="font-size: 10px;">notepad++</a> <a href="/tags/package/" style="font-size: 10px;">package</a> <a href="/tags/tcc/" style="font-size: 10px;">tcc</a> <a href="/tags/vim/" style="font-size: 15px;">vim</a> <a href="/tags/zip/" style="font-size: 10px;">zip</a> <a href="/tags/分享/" style="font-size: 10px;">分享</a> <a href="/tags/图床/" style="font-size: 10px;">图床</a> <a href="/tags/开源项目/" style="font-size: 20px;">开源项目</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/新的一年/" style="font-size: 10px;">新的一年</a> <a href="/tags/设置环境变量/" style="font-size: 10px;">设置环境变量</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a>
+            <a href="/tags/7z/" style="font-size: 10px;">7z</a> <a href="/tags/C-C/" style="font-size: 10px;">C/C++</a> <a href="/tags/c/" style="font-size: 15px;">c</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/gcc/" style="font-size: 10px;">gcc</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/note/" style="font-size: 10px;">note</a> <a href="/tags/notepad/" style="font-size: 10px;">notepad++</a> <a href="/tags/package/" style="font-size: 10px;">package</a> <a href="/tags/tcc/" style="font-size: 15px;">tcc</a> <a href="/tags/vim/" style="font-size: 15px;">vim</a> <a href="/tags/zip/" style="font-size: 10px;">zip</a> <a href="/tags/分享/" style="font-size: 10px;">分享</a> <a href="/tags/图床/" style="font-size: 10px;">图床</a> <a href="/tags/开源项目/" style="font-size: 20px;">开源项目</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/新的一年/" style="font-size: 10px;">新的一年</a> <a href="/tags/解释型语言/" style="font-size: 10px;">解释型语言</a> <a href="/tags/设置环境变量/" style="font-size: 10px;">设置环境变量</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a>
         </div>
     </div>
     <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
@@ -397,7 +403,7 @@
     <div class="mobile-header-tag-container">
         <span class="title">Tags</span>
         <div id="mobile-header-container-tags">
-            <a href="/tags/7z/" style="font-size: 10px;">7z</a> <a href="/tags/C-C/" style="font-size: 10px;">C/C++</a> <a href="/tags/c/" style="font-size: 10px;">c</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/gcc/" style="font-size: 10px;">gcc</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/note/" style="font-size: 10px;">note</a> <a href="/tags/notepad/" style="font-size: 10px;">notepad++</a> <a href="/tags/package/" style="font-size: 10px;">package</a> <a href="/tags/tcc/" style="font-size: 10px;">tcc</a> <a href="/tags/vim/" style="font-size: 15px;">vim</a> <a href="/tags/zip/" style="font-size: 10px;">zip</a> <a href="/tags/分享/" style="font-size: 10px;">分享</a> <a href="/tags/图床/" style="font-size: 10px;">图床</a> <a href="/tags/开源项目/" style="font-size: 20px;">开源项目</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/新的一年/" style="font-size: 10px;">新的一年</a> <a href="/tags/设置环境变量/" style="font-size: 10px;">设置环境变量</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a>
+            <a href="/tags/7z/" style="font-size: 10px;">7z</a> <a href="/tags/C-C/" style="font-size: 10px;">C/C++</a> <a href="/tags/c/" style="font-size: 15px;">c</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/gcc/" style="font-size: 10px;">gcc</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/note/" style="font-size: 10px;">note</a> <a href="/tags/notepad/" style="font-size: 10px;">notepad++</a> <a href="/tags/package/" style="font-size: 10px;">package</a> <a href="/tags/tcc/" style="font-size: 15px;">tcc</a> <a href="/tags/vim/" style="font-size: 15px;">vim</a> <a href="/tags/zip/" style="font-size: 10px;">zip</a> <a href="/tags/分享/" style="font-size: 10px;">分享</a> <a href="/tags/图床/" style="font-size: 10px;">图床</a> <a href="/tags/开源项目/" style="font-size: 20px;">开源项目</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/新的一年/" style="font-size: 10px;">新的一年</a> <a href="/tags/解释型语言/" style="font-size: 10px;">解释型语言</a> <a href="/tags/设置环境变量/" style="font-size: 10px;">设置环境变量</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a>
         </div>
     </div>
 </div>
