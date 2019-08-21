@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>表达式计算 | yuan&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="yuan,yuan's Blog">
+  
+  <meta name="description" content="前言在帮忙同学完成数据结构课设题目–表达式计算时，发现直接从+ - * / 优先级入手的话会比较难完成，因此考虑到先把表达式转换成逆波兰表达式，再用计算逆波兰表达式，这样会比较简单。 不清楚逆波兰表达式和如何将中缀表达式转换成逆波兰表达式的同学可以先阅读这两篇博客：逆波兰表达式计算、中缀表达式转换成逆波兰表达式. 波折当我将中缀表达式转换成逆波兰表达式，将逆波兰表达式存放进数组中，再把数组中的逆波">
+<meta name="keywords" content="c语言,开源项目,逆波兰表达式,中缀表达式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="表达式计算">
+<meta property="og:url" content="https://yuanspace.top/2019/08/20/Calculate/index.html">
+<meta property="og:site_name" content="yuan&#39;s blog">
+<meta property="og:description" content="前言在帮忙同学完成数据结构课设题目–表达式计算时，发现直接从+ - * / 优先级入手的话会比较难完成，因此考虑到先把表达式转换成逆波兰表达式，再用计算逆波兰表达式，这样会比较简单。 不清楚逆波兰表达式和如何将中缀表达式转换成逆波兰表达式的同学可以先阅读这两篇博客：逆波兰表达式计算、中缀表达式转换成逆波兰表达式. 波折当我将中缀表达式转换成逆波兰表达式，将逆波兰表达式存放进数组中，再把数组中的逆波">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-21T06:32:28.704Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="表达式计算">
+<meta name="twitter:description" content="前言在帮忙同学完成数据结构课设题目–表达式计算时，发现直接从+ - * / 优先级入手的话会比较难完成，因此考虑到先把表达式转换成逆波兰表达式，再用计算逆波兰表达式，这样会比较简单。 不清楚逆波兰表达式和如何将中缀表达式转换成逆波兰表达式的同学可以先阅读这两篇博客：逆波兰表达式计算、中缀表达式转换成逆波兰表达式. 波折当我将中缀表达式转换成逆波兰表达式，将逆波兰表达式存放进数组中，再把数组中的逆波">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">yuan&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        yuan&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        你想飞，就努力长出翅膀
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="yuan" target="_blank" href="//Hxyspace.github.io">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/Hxyspace">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="weibo" target="_blank" href="//weibo.com/xyuansky">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-Calculate" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      表达式计算
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/表达式计算/">表达式计算</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-08-20
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在帮忙同学完成数据结构课设题目–表达式计算时，发现直接从+ - * / 优先级入手的话会比较难完成，因此考虑到先把表达式转换成逆波兰表达式，再用计算逆波兰表达式，这样会比较简单。</p>
+<p>不清楚逆波兰表达式和如何将中缀表达式转换成逆波兰表达式的同学可以先阅读这两篇博客：<a href="">逆波兰表达式计算</a>、<a href="">中缀表达式转换成逆波兰表达式</a>.</p>
+<h3 id="波折"><a href="#波折" class="headerlink" title="波折"></a>波折</h3><p>当我将中缀表达式转换成逆波兰表达式，将逆波兰表达式存放进数组中，再把数组中的逆波兰表达式作为输入计算时，发现这样做的话，代码就有四五百行了。</p>
+<p>禀着能简则简的原则，决定对代码进行简化，最终想到是否可以一边转换成逆波兰表达式一边计算呢，也就是转换和计算同时进行。最后发现想法是可行的。代码量从最初的四百多行简化成一百多行。</p>
+<h3 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h3><p>c语言实现</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*  将中缀转后缀表达式 和计算后缀表达式 的算法合并   不定义栈结构体  数组代替栈*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> STACK_INIT_SIZE 100</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">Sum</span><span class="params">(<span class="keyword">char</span> a,<span class="keyword">double</span> x,<span class="keyword">double</span> y)</span>     <span class="comment">//两个数的计算</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">switch</span>( a )</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'+'</span>:</span><br><span class="line">				<span class="keyword">return</span> x+y;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'-'</span>:</span><br><span class="line">				<span class="keyword">return</span> x-y;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'*'</span>:</span><br><span class="line">				<span class="keyword">return</span> x*y;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'/'</span>:</span><br><span class="line">				<span class="keyword">if</span>(y != <span class="number">0</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">return</span> x / y;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">				&#123;</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">"\n出错：除数为零！\n"</span>);</span><br><span class="line">					<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">				&#125;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Priority</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> s1[STACK_INIT_SIZE];              <span class="comment">//运算符存入s1    数字存入s2</span></span><br><span class="line">	<span class="keyword">double</span> s2[STACK_INIT_SIZE];</span><br><span class="line">	<span class="keyword">char</span> c,e;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">double</span> d,f,sum;</span><br><span class="line">	<span class="keyword">char</span> str[<span class="number">10</span>];</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> base1,top1,base2,top2;           <span class="comment">//分别为s1 和 s2 的  栈顶  栈底</span></span><br><span class="line"></span><br><span class="line">	base1=top1=base2=top2 = <span class="number">0</span>;   <span class="comment">//初始化栈顶 栈底</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">scanf</span> (<span class="string">"%c"</span>,&amp;c);</span><br><span class="line">	<span class="keyword">while</span>( c != <span class="string">'#'</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span>(c == <span class="string">' '</span>)</span><br><span class="line">			<span class="built_in">scanf</span> (<span class="string">"%c"</span>,&amp;c);        <span class="comment">//如果接收到空格   则继续输入</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span>((c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>)||c==<span class="string">'.'</span>)         <span class="comment">//筛选数字</span></span><br><span class="line">		&#123;</span><br><span class="line">			str[i++] = c;</span><br><span class="line">			str[i] = <span class="string">'\0'</span>;</span><br><span class="line">			<span class="keyword">if</span>(i&gt;=<span class="number">10</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"出错，数太大!\n"</span>);</span><br><span class="line">				<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">scanf</span> (<span class="string">"%c"</span>,&amp;c);</span><br><span class="line">			<span class="keyword">if</span>(!((c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>)||c==<span class="string">'.'</span>))     <span class="comment">//数字输入结束</span></span><br><span class="line">			&#123;</span><br><span class="line">				d = atof(str);             <span class="comment">//字符串转换成浮点类型</span></span><br><span class="line">				s2[top2++] = d;            <span class="comment">//将数字存入 double型的栈中</span></span><br><span class="line">				i = <span class="number">0</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span>(c == <span class="string">' '</span>)</span><br><span class="line">			<span class="built_in">scanf</span> (<span class="string">"%c"</span>,&amp;c);        <span class="comment">//如果接收到空格   则继续输入</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span>(<span class="string">')'</span>==c)              <span class="comment">//如果遇到 ) 则计算 栈中的数据  直到遇到  (</span></span><br><span class="line">		&#123;</span><br><span class="line">			e = s1[--top1];     <span class="comment">//运算符出栈</span></span><br><span class="line">			<span class="keyword">while</span>(<span class="string">'('</span> != e)</span><br><span class="line">			&#123;</span><br><span class="line">				f = s2[--top2];       <span class="comment">//将栈中的两个数字 出栈  </span></span><br><span class="line">				d = s2[--top2];</span><br><span class="line">				sum = Sum(e,d,f);       <span class="comment">//计算出栈的两个数</span></span><br><span class="line">				s2[top2++] = sum;      <span class="comment">//将计算结果存入栈中</span></span><br><span class="line">				e = s1[--top1];   <span class="comment">//运算符出栈</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(<span class="string">'+'</span>==c||<span class="string">'-'</span>==c)     <span class="comment">//如果遇到 + 或者 - ，就计算栈中的数据  直到运算符栈空</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>( !(top1 - base1))</span><br><span class="line">			&#123;</span><br><span class="line">				s1[top1++] = c;    <span class="comment">//如果运算符栈中无数据  则运算符入栈</span></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span>       <span class="comment">//如果运算符栈不为空  则一直计算</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">do</span></span><br><span class="line">				&#123;</span><br><span class="line">					e = s1[--top1];   <span class="comment">//将栈中的运算符弹出</span></span><br><span class="line">					<span class="keyword">if</span>(<span class="string">'('</span>==e)</span><br><span class="line">					&#123;</span><br><span class="line">						s1[top1++] = e;   <span class="comment">//如果 运算符为 ( 入栈</span></span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">else</span></span><br><span class="line">					&#123;</span><br><span class="line">						f = s2[--top2];       <span class="comment">//将栈中的两个数字 出栈  </span></span><br><span class="line">						d = s2[--top2];</span><br><span class="line">						sum = Sum(e,d,f);       <span class="comment">//计算出栈的两个数</span></span><br><span class="line">						s2[top2++] = sum;      <span class="comment">//将计算结果存入栈中</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;<span class="keyword">while</span>(top1 - base1 &amp;&amp;<span class="string">'('</span>!=e);</span><br><span class="line">				s1[top1++] = c;                <span class="comment">//运算符入栈</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(<span class="string">'*'</span>==c||<span class="string">'/'</span>==c||<span class="string">'('</span>==c)       <span class="comment">//如果运算符为比较高的 *  /  或  (   就直接入栈等待</span></span><br><span class="line">		&#123;</span><br><span class="line">			s1[top1++] = c;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(c==<span class="string">'#'</span>)    <span class="comment">//遇到 # 说明输入结束 退出循环</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"\n出错：输入格式错误！\n"</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">scanf</span> (<span class="string">"%c"</span>,&amp;c);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//接受完用户输入的所有字符后   不断将数字弹出栈  计算  直到没有运算符  也就是数字只剩最后一个结果</span></span><br><span class="line">	<span class="keyword">while</span>(top1 - base1)</span><br><span class="line">	&#123;</span><br><span class="line">		e = s1[--top1];</span><br><span class="line">		f = s2[--top2];</span><br><span class="line">		d = s2[--top2];</span><br><span class="line">		sum = Sum(e,d,f);        <span class="comment">//计算两个数的结果 并将结果压入栈中</span></span><br><span class="line">		s2[top2++] = sum;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	d = s2[--top2];   <span class="comment">//将最后的结果出栈</span></span><br><span class="line">	<span class="keyword">if</span>((<span class="keyword">int</span>)d == d)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n %d"</span>,(<span class="keyword">int</span>)d);     <span class="comment">//如果结果为整数就打印整型   如果结果为小数就打印浮点型</span></span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n %lf"</span>,d);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">char</span> x = <span class="string">'y'</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"请输入算数表达式（支持小数），以#作为结束标志：\n"</span>);</span><br><span class="line">	<span class="keyword">while</span>(x == <span class="string">'y'</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		Priority();    <span class="comment">//计算</span></span><br><span class="line"></span><br><span class="line">		<span class="built_in">putchar</span>(<span class="string">'\n'</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n是否继续输入（ y / n ）？  ："</span>);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span>((x = getchar()) == <span class="string">'\n'</span>);    <span class="comment">//清空缓冲区</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span>(x != <span class="string">'y'</span> &amp;&amp; x != <span class="string">'n'</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"\n是否继续输入（ y / n ）？  ："</span>);</span><br><span class="line"></span><br><span class="line">			<span class="keyword">while</span>((x = getchar()) == <span class="string">'\n'</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span>(getchar() != <span class="string">'\n'</span>);          <span class="comment">//清空缓冲区</span></span><br><span class="line">		<span class="built_in">putchar</span>(<span class="string">'\n'</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="发现"><a href="#发现" class="headerlink" title="发现"></a>发现</h3><p>当完成两种算法的合并时，毅然发现表达式计算算法恰好是根据 + - * / 优先实现计算的。</p>
+<h2 id="nbsp"><a href="#nbsp" class="headerlink" title="&nbsp;"></a>&nbsp;</h2><center>– ©博主原创，转载请注明出处 –</center>
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年08月21日 14:32</p>
+        <p>原始链接： <a class="post-url" href="/2019/08/20/Calculate/" title="表达式计算">https://yuanspace.top/2019/08/20/Calculate/</a></p>
+        <footer>
+            <a href="https://yuanspace.top">
+                <img src="/images/logo.png" alt="yuan">
+                yuan
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/Alipay.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yuanspace.top/2019/08/20/Calculate/&title=《表达式计算》 — yuan's blog&pic=https://i.loli.net/2019/08/21/ImR5COKyTdWXJzg.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yuanspace.top/2019/08/20/Calculate/&title=《表达式计算》 — yuan's blog&source=个人随手笔·技术博客" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yuanspace.top/2019/08/20/Calculate/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《表达式计算》 — yuan's blog&url=https://yuanspace.top/2019/08/20/Calculate/&via=https://yuanspace.top" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yuanspace.top/2019/08/20/Calculate/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://yuanspace.top/2019/08/20/Calculate/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/c语言/" class="color4">c语言</a>
+      
+    <a href="/tags/开源项目/" class="color5">开源项目</a>
+      
+    <a href="/tags/逆波兰表达式/" class="color2">逆波兰表达式</a>
+      
+    <a href="/tags/中缀表达式/" class="color1">中缀表达式</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言"><span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#波折"><span class="post-toc-text">波折</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#成果"><span class="post-toc-text">成果</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#发现"><span class="post-toc-text">发现</span></a></li></ol><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#nbsp"><span class="post-toc-text"> </span></a>
+        </li></nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2019/08/20/RPN/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          逆波兰表达式
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2019/08/20/RNM/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">中缀表达式转逆波兰表达式</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 yuan<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://yuanspace.top",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 2
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Markdown/">Markdown</a><a class="category-link" href="/categories/bandizip/">bandizip</a><a class="category-link" href="/categories/java-package/">java package</a><a class="category-link" href="/categories/mingw/">mingw</a><a class="category-link" href="/categories/vim/">vim</a><a class="category-link" href="/categories/图床推荐/">图床推荐</a><a class="category-link" href="/categories/最小编译器/">最小编译器</a><a class="category-link" href="/categories/脚本/">脚本</a><a class="category-link" href="/categories/表达式计算/">表达式计算</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/7z/" style="font-size: 10px;">7z</a> <a href="/tags/C-C/" style="font-size: 10px;">C/C++</a> <a href="/tags/c/" style="font-size: 13.33px;">c</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/c语言/" style="font-size: 16.67px;">c语言</a> <a href="/tags/gcc/" style="font-size: 10px;">gcc</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/note/" style="font-size: 10px;">note</a> <a href="/tags/notepad/" style="font-size: 10px;">notepad++</a> <a href="/tags/package/" style="font-size: 10px;">package</a> <a href="/tags/tcc/" style="font-size: 13.33px;">tcc</a> <a href="/tags/vim/" style="font-size: 13.33px;">vim</a> <a href="/tags/zip/" style="font-size: 10px;">zip</a> <a href="/tags/中缀表达式/" style="font-size: 13.33px;">中缀表达式</a> <a href="/tags/分享/" style="font-size: 10px;">分享</a> <a href="/tags/图床/" style="font-size: 10px;">图床</a> <a href="/tags/开源项目/" style="font-size: 20px;">开源项目</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/新的一年/" style="font-size: 10px;">新的一年</a> <a href="/tags/解释型语言/" style="font-size: 10px;">解释型语言</a> <a href="/tags/设置环境变量/" style="font-size: 10px;">设置环境变量</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/逆波兰表达式/" style="font-size: 16.67px;">逆波兰表达式</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/7z/" style="font-size: 10px;">7z</a> <a href="/tags/C-C/" style="font-size: 10px;">C/C++</a> <a href="/tags/c/" style="font-size: 13.33px;">c</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/c语言/" style="font-size: 16.67px;">c语言</a> <a href="/tags/gcc/" style="font-size: 10px;">gcc</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/note/" style="font-size: 10px;">note</a> <a href="/tags/notepad/" style="font-size: 10px;">notepad++</a> <a href="/tags/package/" style="font-size: 10px;">package</a> <a href="/tags/tcc/" style="font-size: 13.33px;">tcc</a> <a href="/tags/vim/" style="font-size: 13.33px;">vim</a> <a href="/tags/zip/" style="font-size: 10px;">zip</a> <a href="/tags/中缀表达式/" style="font-size: 13.33px;">中缀表达式</a> <a href="/tags/分享/" style="font-size: 10px;">分享</a> <a href="/tags/图床/" style="font-size: 10px;">图床</a> <a href="/tags/开源项目/" style="font-size: 20px;">开源项目</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/新的一年/" style="font-size: 10px;">新的一年</a> <a href="/tags/解释型语言/" style="font-size: 10px;">解释型语言</a> <a href="/tags/设置环境变量/" style="font-size: 10px;">设置环境变量</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/逆波兰表达式/" style="font-size: 16.67px;">逆波兰表达式</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
